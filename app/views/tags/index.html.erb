@@ -1,0 +1,11 @@
+<h1>All tags in blogger</h1>
+
+<p>
+  Tags:<br />
+  <% @tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+    <%= link_to "Delete", tag_path(tag), method: :delete, data: {confirm: "Really delete the tag?"} %><br />
+  <% end %>
+  <br />
+  <%= link_to "Back to Articles List", articles_path %>
+</p>
